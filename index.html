@@ -6,43 +6,61 @@
   <title>Registration Form</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
 </head>
-<body class="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 bg-gray-50">
-  <div class="relative bg-white px-6 pt-5 pb-5 shadow-xl ring-1 ring-gray-900/5 sm:max-w-lg sm:rounded-lg sm:px-10">
-    <div class="mx-auto max-w-md">
-      <h2 class="text-3xl text-center font-bold leading-tight">Registration Form</h2>
-      <div class="divide-y divide-gray-300/50"></div>
-      <div class="space-y-6 py-8 text-base leading-7 text-gray-600">
+<body class="bg-gray-50 py-10">
+  <div class="container mx-auto px-4">
+    <div class="bg-white shadow-xl rounded-lg px-6 py-8 ring-1 ring-gray-900/5 sm:max-w-lg sm:mx-auto">
+      <h2 class="text-3xl font-bold text-center">Registration Form</h2>
+      <div class="mt-8">
         <form id="user-form">
-          <label for="name" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">Name</label>
-          <input required type="text" id="name" name="name" class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500" placeholder="Enter full name"/>
+          <div class="mb-4">
+            <label for="name" class="block font-medium text-gray-700">Name</label>
+            <input type="text" id="name" required name="name" class="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm" placeholder="Enter full name">
+          </div>
 
-          <label for="email" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">Email</label>
-          <input required type="email" id="email" name="email" class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500" placeholder="Enter email"/>
+          <div class="mb-4">
+            <label for="email" class="block font-medium text-gray-700">Email</label>
+            <input type="email" id="email" required name="email" class="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm" placeholder="Enter email">
+          </div>
 
-          <label for="password" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">Password</label>
-          <input required type="password" id="password" name="password" class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500" placeholder="Enter password"/>
+          <div class="mb-4">
+            <label for="password" class="block font-medium text-gray-700">Password</label>
+            <input type="password" id="password" required name="password" class="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm" placeholder="Enter password">
+          </div>
 
-          <label for="dob" class="text-md w-40 inline-block font-medium leading-5 text-gray-700">Date of Birth</label>
-          <input required type="date" id="dob" name="dob" class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5 text-base leading-6 placeholder-gray-500"/>
+          <div class="mb-4">
+            <label for="dob" class="block font-medium text-gray-700">Date of Birth</label>
+            <input type="date" id="dob" required name="dob" class="mt-1 block w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-md shadow-sm">
+          </div>
 
-          <label for="acceptTerms" class="text-md w-50 inline-block font-medium leading-5 text-gray-700">Accept Terms & Conditions</label>
-          <input type="checkbox" id="acceptTerms" name="acceptTerms" class="bg-gray-100 inline-block rounded-lg shadow-md px-4 py-3 mb-5"/>
+          <div class="mb-4">
+            <label class="inline-flex items-center">
+              <input type="checkbox" id="acceptTerms" name="acceptTerms" class="bg-gray-100 border-gray-300 rounded">
+              <span class="ml-2 text-gray-700">Accept Terms & Conditions</span>
+            </label>
+          </div>
 
-          <button type="submit" class="w-fit rounded-lg shadow-lg px-8 py-4 bg-green-500 text-white hover:bg-green-400 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">Submit</button>
+          <div>
+            <button type="submit" class="w-full py-2 px-4 bg-green-500 text-white rounded-lg hover:bg-green-600">Submit</button>
+          </div>
         </form>
+      </div>
+    </div>
 
-        <!-- Table to display entries -->
-        <table id="entries-table" class="min-w-full divide-y divide-gray-200 mt-8">
+    <div class="mt-12"> 
+      <h3 class="text-2xl font-bold text-center mb-4">Entries</h3>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white shadow-md rounded-lg">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Password</th>
-              <th>Dob</th>
-              <th>Accepted terms?</th>
+              <th class="px-4 py-2 border">Name</th>
+              <th class="px-4 py-2 border">Email</th>
+              <th class="px-4 py-2 border">Password</th>
+              <th class="px-4 py-2 border">dob</th>
+              <th class="px-4 py-2 border">Accepted Terms?</th>
             </tr>
           </thead>
-          <tbody id="table-body"></tbody>
+          <tbody id="table-body">
+          </tbody>
         </table>
       </div>
     </div>
